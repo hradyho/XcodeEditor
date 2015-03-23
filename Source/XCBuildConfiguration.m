@@ -16,6 +16,7 @@
 #import "XCKeyBuilder.h"
 #import "XCProject.h"
 #import "XCSourceFile.h"
+#import "NSDictionary+DeepMutableCopy.h"
 
 @implementation XCBuildConfiguration
 
