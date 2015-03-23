@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6346D2251AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.h in Headers */ = {isa = PBXBuildFile; fileRef = 6346D2231AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.h */; };
+		6346D2261AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6346D2241AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.m */; };
 		6B3ACFE114F8A2FE00BCFE81 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC10164147775A40055CF03 /* Cocoa.framework */; };
 		6BCED6E81A4A61DC0005596F /* XcodeEditor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B3ACFE014F8A2FE00BCFE81 /* XcodeEditor.framework */; };
 		6BCED6EE1A4A62760005596F /* Person.impl in Resources */ = {isa = PBXBuildFile; fileRef = BA79848C44BAD3669D8B787E /* Person.impl */; };
@@ -77,6 +79,8 @@
 /* Begin PBXFileReference section */
 		0D59559C68474478B54FFFCD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		6156FCE3C2574F3B96555CAB /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6346D2231AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DeepMutableCopy.h"; sourceTree = "<group>"; };
+		6346D2241AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DeepMutableCopy.m"; sourceTree = "<group>"; };
 		6B3ACFE014F8A2FE00BCFE81 /* XcodeEditor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XcodeEditor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B41FDA714F60C5E00004897 /* libprofile_rt.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libprofile_rt.dylib; path = Toolchains/XcodeDefault.xctoolchain/usr/lib/libprofile_rt.dylib; sourceTree = DEVELOPER_DIR; };
 		6B789B7C14E37ACB00DAA872 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
@@ -286,6 +290,8 @@
 				BA7989AC9710D456572783C7 /* XCProject.m */,
 				BA798D221F1008AE859B76B8 /* XCXibDefinition.h */,
 				BA798FDE9BAA7D87499853ED /* XCFileOperationQueue.h */,
+				6346D2231AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.h */,
+				6346D2241AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -350,6 +356,7 @@
 				BA7984763E39F64955CFE6F5 /* XcodeMemberType.h in Headers */,
 				BA79868C0786BB13E5C324ED /* XCProject.h in Headers */,
 				BA798EFC5F24AC9FD857373C /* XCFrameworkDefinition.h in Headers */,
+				6346D2251AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.h in Headers */,
 				BA798A3F4DCBD5DD024B1147 /* XcodeGroupMember.h in Headers */,
 				BA798AD506D19B5D3FB6DE4E /* XCAbstractDefinition.h in Headers */,
 				BA798F131E3B0412BEE23CA3 /* XcodeEditor.h in Headers */,
@@ -472,6 +479,7 @@
 				BA79861FCDBD84679CA89D9E /* XCKeyBuilder.m in Sources */,
 				BA7981FF93FAFD6320C739ED /* XCSourceFile.m in Sources */,
 				BA7989692AF001BA1BBEACCF /* XCSourceFileDefinition.m in Sources */,
+				6346D2261AC06F5B00E24192 /* NSDictionary+DeepMutableCopy.m in Sources */,
 				BA79881A93B24339436DF2FC /* XCXibDefinition.m in Sources */,
 				BA7988C3E49E2C17AACB9CDC /* XcodeSourceFileType.m in Sources */,
 				BA798BD3214388015EAFDDFB /* XCTarget.m in Sources */,

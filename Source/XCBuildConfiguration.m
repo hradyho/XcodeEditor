@@ -183,7 +183,7 @@
     withBuildConfigurationVisitor:(void (^)(NSMutableDictionary*))buildConfigurationVisitor
 {
     NSDictionary* buildConfiguration = project.objects[buildConfigurationKey];
-    NSMutableDictionary* dupBuildConfiguration = [buildConfiguration mutableCopy];
+    NSMutableDictionary* dupBuildConfiguration = [buildConfiguration deepMutableCopy];
 
     buildConfigurationVisitor(dupBuildConfiguration);
 
