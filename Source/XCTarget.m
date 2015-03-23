@@ -231,21 +231,28 @@
     NSDictionary* targetObj = _project.objects[_key];
     NSMutableDictionary* dupTargetObj = [targetObj mutableCopy];
 
+    NSString* usedProductName = self.productName;
+    if (productName) {
+        usedProductName = productName;
+    }
+    
     dupTargetObj[@"name"] = targetName;
-    dupTargetObj[@"productName"] = productName;
+    dupTargetObj[@"productName"] = usedProductName;
 
     NSString* buildConfigurationListKey = dupTargetObj[@"buildConfigurationList"];
 
     void(^visitor)(NSMutableDictionary*) = ^(NSMutableDictionary* buildConfiguration)
     {
-        buildConfiguration[@"buildSettings"][@"PRODUCT_NAME"] = productName;
+        if (productName) {
+            buildConfiguration[@"buildSettings"][@"PRODUCT_NAME"] = productName;
+        }
     };
 
     dupTargetObj[@"buildConfigurationList"] =
         [XCBuildConfiguration duplicatedBuildConfigurationListWithKey:buildConfigurationListKey inProject:_project
             withBuildConfigurationVisitor:visitor];
 
-    [self duplicateProductReferenceForTargetObject:dupTargetObj withProductName:productName];
+    [self duplicateProductReferenceForTargetObject:dupTargetObj withProductName:usedProductName];
 
     [self duplicateBuildPhasesForTargetObject:dupTargetObj];
 
@@ -255,7 +262,7 @@
 
     [_project dropCache];
 
-    return [[XCTarget alloc] initWithProject:_project key:dupTargetObjKey name:targetName productName:productName
+    return [[XCTarget alloc] initWithProject:_project key:dupTargetObjKey name:targetName productName:usedProductName
         productReference:dupTargetObj[@"productReference"]];
 }
 
