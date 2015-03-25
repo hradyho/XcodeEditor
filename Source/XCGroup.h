@@ -116,6 +116,11 @@
 - (void)addFolderReference:(NSString*)sourceFolder;
 
 /**
+ * Adds a reference to a bundle
+ */
+- (void)addBundleReference:(NSString*)sourceFile;
+
+/**
 * Adds a framework to the group, making it a member of the specified targets.
 */
 - (void)addFramework:(XCFrameworkDefinition*)framework toTargets:(NSArray*)targets;

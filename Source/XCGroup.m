@@ -197,6 +197,15 @@
 }
 
 
+- (void)addBundleReference:(NSString*)sourceFile {
+    NSDictionary *bundleReferenceDictionary = [self makeFileReferenceWithPath:sourceFile name:[sourceFile lastPathComponent] type:Bundle];
+    NSString* bundleReferenceKey = [[XCKeyBuilder forItemNamed:[sourceFile lastPathComponent]] build];
+    [self addMemberWithKey:bundleReferenceKey];
+    [[_project objects] setObject:bundleReferenceDictionary forKey:bundleReferenceKey];
+    [[_project objects] setObject:[self asDictionary] forKey:_key];
+}
+
+
 - (XCGroup*)addGroupWithPath:(NSString*)path
 {
     NSString* groupKeyPath = self.pathRelativeToProjectRoot ? [self.pathRelativeToProjectRoot stringByAppendingPathComponent:path] : path;
