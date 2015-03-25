@@ -166,7 +166,12 @@
 
                 if (fileRef)
                 {
-                    [buildRefWithFileRefDict setObject:key forKey:fileRef];
+                    NSMutableArray *keys = [buildRefWithFileRefDict objectForKey:fileRef];
+                    if (!keys) {
+                        keys = [NSMutableArray array];
+                        [buildRefWithFileRefDict setObject:keys forKey:fileRef];
+                    }
+                    [keys addObject:key];
                 }
             }
         }
@@ -179,7 +184,7 @@
 
     NSDictionary* buildRefWithFileRef = [self buildRefWithFileRefKey];
     NSDictionary* target = [[_project objects] objectForKey:_key];
-    NSString* buildRef = [buildRefWithFileRef objectForKey:key];
+    NSMutableArray* buildRefs = [buildRefWithFileRef objectForKey:key];
 
     if (!buildRef)
     {
@@ -191,7 +196,9 @@
         NSMutableDictionary* buildPhase = [[_project objects] objectForKey:buildPhaseKey];
         NSMutableArray* files = [buildPhase objectForKey:@"files"];
 
-        [files removeObjectIdenticalTo:buildRef];
+        for (NSString *buildRef in buildRefs) {
+            [files removeObject:buildRef];
+        }
         [buildPhase setObject:files forKey:@"files"];
     }
     [self flagMembersAsDirty];
