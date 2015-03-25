@@ -186,7 +186,7 @@
     NSDictionary* target = [[_project objects] objectForKey:_key];
     NSMutableArray* buildRefs = [buildRefWithFileRef objectForKey:key];
 
-    if (!buildRef)
+    if (!buildRefs)
     {
         return;
     }
